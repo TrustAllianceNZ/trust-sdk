@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.24](https://github.com/TrustAllianceNZ/trust-sdk/compare/@trustalliance/did@0.0.1-alpha.23...@trustalliance/did@0.0.1-alpha.24) (2022-01-23)
+
+**Note:** Version bump only for package @trustalliance/did
+
+
+
+
+
 ## [0.0.1-alpha.23](https://github.com/TrustAllianceNZ/trust-sdk/compare/@trustalliance/did@0.0.1-alpha.22...@trustalliance/did@0.0.1-alpha.23) (2022-01-23)
 
 **Note:** Version bump only for package @trustalliance/did

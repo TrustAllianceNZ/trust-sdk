@@ -1,6 +1,6 @@
 {
   "name": "@trustalliance/agent",
-  "version": "0.0.1-alpha.54",
+  "version": "0.0.1-alpha.55",
   "description": "TrustAlliance agent SDK",
   "source": "src/index.js",
   "main": "build/index.js",
@@ -25,8 +25,8 @@
     "@polkadot/keyring": "^7.6.1",
     "@polkadot/types": "^6.5.2",
     "@polkadot/util-crypto": "^7.6.1",
-    "@trustalliance/key": "^0.0.1-alpha.25",
-    "@trustalliance/vc": "^0.0.1-alpha.30",
+    "@trustalliance/key": "^0.0.1-alpha.26",
+    "@trustalliance/vc": "^0.0.1-alpha.31",
     "axios": "^0.24.0",
     "uuid": "^8.3.2"
   },
