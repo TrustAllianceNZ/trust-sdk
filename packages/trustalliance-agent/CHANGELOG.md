@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.49 (2022-01-23)
+
+**Note:** Version bump only for package @trustalliance/agent
+
+
+
+
+
 ## [0.0.1-alpha.48](https://github.com/trustalliance-blockchain/trustalliance-verifiable/compare/@trustalliance/agent@0.0.1-alpha.47...@trustalliance/agent@0.0.1-alpha.48) (2021-11-25)
 
 **Note:** Version bump only for package @trustalliance/agent

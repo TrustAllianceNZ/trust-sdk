@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.23 (2022-01-23)
+
+**Note:** Version bump only for package @trustalliance/key
+
+
+
+
+
 ## [0.0.1-alpha.22](https://github.com/trustalliance-blockchain/trustalliance-verifiable/compare/@trustalliance/key@0.0.1-alpha.21...@trustalliance/key@0.0.1-alpha.22) (2021-11-25)
 
 **Note:** Version bump only for package @trustalliance/key
