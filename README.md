@@ -30,7 +30,7 @@ Please go through the individual repositories
 * [trustalliance-vc](./packages/trustalliance-vc)
 
 
-### Setup project
+### Setup project.
 ```bash
 nvm use 14
 npm install lerna
