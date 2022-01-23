@@ -1,6 +1,7 @@
 import { RFC3339_REGEX, CREDIENTIAL_CONTEXT, URI_REGEX } from '../constants';
 import { isNonEmptyArray } from '../utils';
 
+// Export
 export function check(credential: any): boolean {
 
   if (!credential) {
