@@ -1,0 +1,150 @@
+import { JsonWebKey2020 } from '@trustalliance/key';
+import { VP, VC } from '@trustalliance/vc';
+import { IKeyPair, ITrustAllianceContext } from '../types';
+
+
+
+function decodeJWT(jwt: string) {
+    const [encodedHeader, encodedPayload, signature] = jwt.split('.');
+
+    const header = JSON.parse(Buffer.from(encodedHeader, 'base64').toString());
+    const payload = JSON.parse(
+        Buffer.from(encodedPayload, 'base64').toString()
+    );
+
+    return {
+        header,
+        payload,
+        signature
+    }
+}
+
+
+async function resolveKeyPair(issuer: string, context: ITrustAllianceContext): Promise<IKeyPair> {
+    const result = await context?.agent?.procedure.resolve(issuer);
+
+    if (!result || !result.did_document) {
+        throw new Error('issuer not resolvable');
+    }
+
+    const verificationMethod = result.did_document.verificationMethod;
+
+    const supportedKey = (verificationMethod || []).find((v: any) => v.type === 'JsonWebKey2020')
+
+    return JsonWebKey2020.import(supportedKey);
+}
+
+
+export class CredentialVerifier {
+
+
+    /**
+     *  Verify w3 credentials as jwt
+     * @param credentials - credentials as jwt
+     * @param context - trustalliance context
+     * @returns promise true/false
+     */
+
+    async verifyCredentials(credentials: any, context: ITrustAllianceContext): Promise<boolean> {
+        const vc = new VC();
+
+        if (typeof credentials === 'string') {
+            const { header, payload } = decodeJWT(credentials);
+
+            if (!header.alg) {
+                throw new Error('alg is required in JWT header');
+            }
+            if (!payload.vc) {
+                throw new Error('vp property is required in JWT');
+            }
+
+            const issuer = payload.iss;
+
+            if (!issuer) {
+                throw new Error('issuer is required to verify signature');
+            }
+            let keyPair;
+            if (issuer) {
+                keyPair = await resolveKeyPair(issuer, context)
+            }
+            if (!keyPair) {
+                throw new Error('keyPair not resolvable');
+            }
+
+            return vc.verify(credentials, {
+                keyPair,
+                credential: payload
+            });
+
+        }
+
+        throw new Error('only jwt verification is supported');
+    }
+
+
+    /**
+     * Verify presentation for jwt
+     * @param presentation - presentation jwt format
+     * @param context - trustalliance context
+     * @param keypair - key pair to verify presentation
+     * @returns promise true/false
+     */
+    async verifyPresentation(presentation: any, context: ITrustAllianceContext, keypair?: IKeyPair): Promise<boolean> {
+
+        if (typeof presentation === 'string') {
+            const { header, payload } = decodeJWT(presentation);
+
+            if (!header.alg) {
+                throw new Error('alg is required in JWT header');
+            }
+            if (!payload.vp) {
+                throw new Error('vp property is required in JWT');
+            }
+
+            const issuer = payload.iss;
+
+            if (issuer && context && !keypair) {
+                keypair = await resolveKeyPair(issuer, context)
+            }
+
+            if (!keypair) {
+                throw new Error('could not resolve verificationMethod.');
+            }
+
+            const vp = new VP();
+
+            vp.validate(payload.vp)
+
+            const r = await vp.verify(presentation, {
+                keyPair: keypair,
+                presentation: payload.vp
+            });
+
+            if (!r) {
+                return false;
+            }
+
+            const credentials = payload.vp.verifiableCredential;
+
+            const credentialsPromises: Promise<boolean>[] = credentials.map((c: any) => this.verifyCredentials(c, context));
+
+            const status = await Promise.all(credentialsPromises)
+
+            return status.reduce((a, b) => a && b, true);
+
+        }
+
+        throw new Error('only jwt verification is supported')
+
+    }
+
+
+    /**
+     * decode jwt
+     * @param jwt 
+     * @returns 
+     */
+    static decodeJWT(jwt: string): { header: any, payload: any, signature: string } {
+        return decodeJWT(jwt);
+    }
+}

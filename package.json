@@ -1,0 +1,36 @@
+{
+  "name": "trustalliance",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "find . -name 'tsconfig.tsbuildinfo' -prune -exec rm '{}' + && lerna run build",
+    "bootstrap": "lerna bootstrap",
+    "prettier": "prettier --write '{packages,!build}/**/*.ts'",
+    "test": "npm run build && lerna run --stream test",
+    "publish:prerelease": "lerna publish --conventional-prerelease --yes --no-verify-access"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-typescript": "^7.15.0",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "lerna": "^4.0.0",
+    "prettier": "^2.3.2",
+    "typedoc": "^0.22.7",
+    "typescript": "^4.4.2"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.23.0",
+    "bootstrap": "^5.1.3"
+  }
+}

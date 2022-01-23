@@ -1,0 +1,42 @@
+{
+  "name": "@trustalliance/did",
+  "version": "0.0.1-alpha.20",
+  "description": "Decentralized Identifiers (DIDs) SDK",
+  "source": "src/index.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trustalliance-blockchain/trustalliance-verifiable.git"
+  },
+  "author": "Team Trackback <dev@trustalliance.co.nz>",
+  "license": "GPL-3.0-or-later",
+  "contributors": [
+    "Don <donlokuge@gmail.com>",
+    "Gayan <kalanamith@gmail.com>"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha -r ts-node/register 'tests/**/*.ts'",
+    "lint": "eslint . --ext .ts"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "mocha": "^9.1.1",
+    "prettier": "2.3.2",
+    "sinon": "^11.1.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "keywords": [
+    "DID",
+    "DID document",
+    "W3C",
+    "TrustAlliance"
+  ],
+  "gitHead": "3aaf0da4aecf5ecea38490e6addf1c5c4cdbc760"
+}

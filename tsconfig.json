@@ -1,0 +1,34 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": [
+        "./packages/trustalliance-vc/src/**/*.ts",
+        "./packages/trustalliance-did/src/**/*.ts",
+        "./packages/trustalliance-agent/src/**/*.ts",
+        "./packages/trustalliance-key/src/**/*.ts",
+    ],
+    "compilerOptions": {
+        "paths": {
+            "@trustalliance/vc": [
+                "./packages/trustalliance-vc/src"
+            ],
+            "@trustalliance/did": [
+                "./packages/trustalliance-did/src"
+            ],
+            "@trustalliance/agent": [
+                "./packages/trustalliance-agent/src"
+            ],
+            "@trustalliance/key": [
+                "./packages/trustalliance-key/src"
+            ],
+        }
+    },
+    "typedocOptions": {
+        "entryPoints": [
+            "packages/trustalliance-vc/src/index.ts",
+            "packages/trustalliance-did/src/index.ts",
+            "packages/trustalliance-agent/src/index.ts",
+            "packages/trustalliance-key/src/index.ts",
+        ],
+        "out": "docs"
+    }
+}

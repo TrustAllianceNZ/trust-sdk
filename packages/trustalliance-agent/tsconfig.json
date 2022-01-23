@@ -1,0 +1,16 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "build",
+        "declarationDir": "build"
+    },
+    "references": [
+        {
+            "path": "../trustalliance-key"
+        },
+        {
+            "path": "../trustalliance-vc"
+        },
+    ]
+}

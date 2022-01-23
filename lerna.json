@@ -1,0 +1,19 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "allowBranch": [
+        "main",
+        "staging"
+
+      ],
+      "conventionalCommits": true,
+      "gitRemote": "origin"
+    }
+  }
+}
