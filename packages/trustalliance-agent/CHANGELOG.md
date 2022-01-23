@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.51](https://github.com/TrustAllianceNZ/trust-sdk/compare/@trustalliance/agent@0.0.1-alpha.50...@trustalliance/agent@0.0.1-alpha.51) (2022-01-23)
+
+**Note:** Version bump only for package @trustalliance/agent
+
+
+
+
+
 ## [0.0.1-alpha.50](https://github.com/TrustAllianceNZ/trust-sdk/compare/@trustalliance/agent@0.0.1-alpha.49...@trustalliance/agent@0.0.1-alpha.50) (2022-01-23)
 
 **Note:** Version bump only for package @trustalliance/agent
