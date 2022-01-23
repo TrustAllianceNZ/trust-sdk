@@ -1,4 +1,4 @@
-[![ExpTrackback Logo](https://user-images.githubusercontent.com/2051324/127407635-236f8a7a-4ca6-410a-9fc4-add396743cfa.png)](https://trustalliance.co.nz/)
+[![ExpTrustAlliance Logo](https://avatars.githubusercontent.com/u/95656833?s=100)](https://trustalliance.co.nz/)
 
 [![TrustAlliance Key SDK 0.0.1-alpha.6](https://img.shields.io/badge/trustalliance--key-0.0.1--alpha-green)](https://github.com/trustalliance-blockchain/trustalliance-verifiable/tree/main/packages/trustalliance-key)
 [![TrustAlliance Key SDK 0.0.1-alpha.6](https://img.shields.io/badge/build-pass-blueviolet)](https://github.com/trustalliance-blockchain/trustalliance-verifiable/tree/main/packages)
