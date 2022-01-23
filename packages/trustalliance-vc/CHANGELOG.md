@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.29](https://github.com/TrustAllianceNZ/trust-sdk/compare/@trustalliance/vc@0.0.1-alpha.28...@trustalliance/vc@0.0.1-alpha.29) (2022-01-23)
+
+**Note:** Version bump only for package @trustalliance/vc
+
+
+
+
+
 ## [0.0.1-alpha.28](https://github.com/TrustAllianceNZ/trust-sdk/compare/@trustalliance/vc@0.0.1-alpha.27...@trustalliance/vc@0.0.1-alpha.28) (2022-01-23)
 
 **Note:** Version bump only for package @trustalliance/vc
