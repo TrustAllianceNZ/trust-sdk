@@ -1,7 +1,7 @@
 import { DIDDocument } from '.';
 import { ServiceEndpoint, VerificationMethod } from './types';
 
-
+// Builder
 export class Builder {
   id!: string;
   controller!: string | string[];

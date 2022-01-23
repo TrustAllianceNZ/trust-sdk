@@ -1,5 +1,6 @@
 type IssuerURI = string;
 
+// Issuer
 interface IssuerObject {
   id: string;
   [x: string]: any;

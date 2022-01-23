@@ -15,7 +15,7 @@ import Keyring from "@polkadot/keyring";
 
 
 /**
- * Trackback implementation for issuing credentials and presentations
+ * Trackback implementation for issuing credentials and presentations.
  */
 export class CredentialIssuer implements ICredentialIssuer {
 

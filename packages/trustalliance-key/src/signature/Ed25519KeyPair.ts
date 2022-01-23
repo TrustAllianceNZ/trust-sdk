@@ -6,6 +6,7 @@ import { CONTENT_TYPE_DID_LD_JSON } from '../constants';
 
 import { Ed25519VerificationKey2018, IEd25519KeyPair } from '../types';
 
+// KeyPair
 export class Ed25519KeyPair implements IEd25519KeyPair {
   public id: string;
   public controller: string;
